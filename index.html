@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="ngTask">
+	<head>
+		<meta charset="utf-8">
+		<title>UI Task</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--styles-->
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet'>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/kendo.common.min.css">
+		<link rel="stylesheet" href="css/kendo.silver.min.css">
+		<!--fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<!--overrides-->
+		<link rel="stylesheet" href="css/style.css">
+		<!--angular jquery and kendo-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-ui-router.js"></script>
+		<script src="app.js"></script>	
+		<!--angular controllers-->
+		<script src="common/common.ctrl.js"></script>
+		<script src="dashboard/dashboard.ctrl.js"></script>
+		<script src="employee/employee.ctrl.js"></script>
+	</head>
+	<body>		
+		<div class="container-fluid">
+			<div class="row row-offcanvas row-offcanvas-left" ng-controller="headerCtrl">
+				<div class="col-xs-2 sidebar sidebar-offcanvas">
+					<sidebar></sidebar>
+				</div>
+				<div class="col-xs-10 allContent">
+					<header></header>
+					<div class="contentContainer">
+						<ui-view></ui-view>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script src="js/kendo.all.min.js"></script>
+		<script src="js/angular-kendo.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

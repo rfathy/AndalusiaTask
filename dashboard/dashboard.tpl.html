@@ -1,0 +1,23 @@
+<div ng-controller="dashCtrl">
+	<div class="panelContainer">
+		<div class="col-md-5 panel" ng-class="reizable" ng-repeat="i in [1,2,3,4]">
+			<div class="panelHeader">
+				<div class="col-md-9 panelTitle"><h4>Panel -{{$index}}</h4></div>
+				<div class="col-md-3 panelControls">
+					<a><i class="fas fa-minus" ng-click="reizable='halfWidth'"></i></a>
+					<a><i class="far fa-window-maximize" ng-click="reizable='fullWidth'"></i></a>
+					<a><i class="fas fa-times" ng-click="reizable='hide'"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="panelBody">
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset s
+				</p>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>	
+

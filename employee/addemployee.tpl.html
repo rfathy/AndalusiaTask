@@ -1,0 +1,74 @@
+<div ng-controller="addCtrl">
+    <h3>Add an Employee</h3>
+	<form kendo-validator="validator" ng-submit="validate($event)" novalidate class="k-form"> 
+        <div ng-show='isLoadingContent' class="alert alert-warning alert-dismissible fade in" role="alert">
+            {{msg}}
+        </div>
+        <ul id="fieldlist">
+            <li>
+                <label class="required">
+                    <span>
+                        Full Name 
+                        <span class="k-required">*</span>
+                    </span>
+                    <input type="text" class="k-textbox" name="name" ng-model="name" required validationMessage="Enter {0}">
+                </label>
+            </li>            
+            <li>
+                <label class="required">
+                    <span>
+                        Code 
+                        <span class="k-required">*</span>
+                    </span>
+                    <input type="number" min="0" class="k-textbox" name="code" ng-model="code" required validationMessage="Enter {0}">
+                </label>
+            </li>
+            <li>
+                <label class="required">
+                    <span>
+                        Department 
+                        <span class="k-required">*</span>
+                    </span>
+                    <select 
+                    	kendo-drop-down-list 
+                    	name="department" 
+                    	k-ng-model="department"
+                    	required 
+                    	data-required-msg="Select Department">
+                    	<option value="" style="display: none"></option>
+                        <option value="Sales">Sales</option>
+                        <option value="Accounting">Accounting</option>
+                        <option value="Design">Design</option>
+                        <option value="Engineering">Engineering</option>
+                    </select>
+                    <p ng-show="userForm.department.$invalid && !userForm.department.$pristine" class="help-block">This field is required.</p>
+                </label>
+            </li>
+            <li>
+                <label>
+                	<span>
+                        Birthday
+                    </span>
+                    <div class="demo-section k-content">
+                    <input name="birthday" ng-model="birthday" id="ddate" type="text" kendo-date-picker ng-attr-placeholder="{{dateOut | date:'MM/dd/yyyy'}}" style="width: 100%;">
+                    </div>
+                </label>
+            </li>
+            <li>
+                <label>
+                	<span>
+                        Gender
+                    </span>
+                    <input type="radio" name="group" ng-model="gender" id="male" value="male" class="k-radio" checked />
+			       	<label class="k-radio-label" for="male">Male</label>
+			       	<input type="radio" name="group" ng-model="gender" id="female" value="female" class="k-radio" />
+			       	<label class="k-radio-label" for="female">Femal</label>
+                </label>
+            </li>
+            <!-- SUBMIT BUTTON -->
+            <br>
+            <button type="submit" class="btn" ng-click="postdata(code, name, department, birthday, gender)">Add</button>
+        </ul>
+    </form>
+
+</div>

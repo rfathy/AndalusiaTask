@@ -1,0 +1,30 @@
+[
+	{
+		"code": "0",
+		"name": "Patricia",
+		"department": "Sales",
+		"birthday": "10/1/1980",
+		"gender": "female"
+	},
+	{
+		"code": "1",
+		"name": "Chelsey",
+		"department": "Accounting",
+		"birthday": "10/1/1985",
+		"gender": "female"
+	},
+	{
+		"code": "2",
+		"name": "Dennis",
+		"department": "Design",
+		"birthday": "10/1/1985",
+		"gender": "male"
+	},
+	{
+		"code": "3",
+		"name": "John",
+		"department": "Engineering",
+		"birthday": "10/1/1965",
+		"gender": "male"
+	}
+]
