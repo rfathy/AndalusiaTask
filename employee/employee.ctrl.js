@@ -93,14 +93,16 @@ app
     $scope.code = null;
     $scope.name = null;
     $scope.department = null;
-    $scope.birthday;
-    $scope.gender;
+    $scope.birthday = null;
+    $scope.gender = "-";
 
     $scope.postdata = function (code, name, department, birthday, gender) {
+        $scope.alertClass = "alert-success"; //change alert color according to status
         //check mandatory field
-        if(code == null || name == null || department == null){
+        if(code == null || name == null || department == null || birthday == null){
             $scope.msg = "Error! Check missing fields. ";
-            this.isLoadingContent = true;
+            $scope.alertClass = "alert-warning";
+            this.isFailed = true;
         }
         //if valid print success message
         else{
@@ -111,17 +113,20 @@ app
                 birthday: birthday,
                 gender: gender
             };
+
+            //print saved employee to screen
+            this.savedEm = true;
             console.log(code, name, department, birthday, gender);
 
+            this.isFailed = true;
             //Call the services
             $http.post('http://localhost/AndalusiaTask/data/data', JSON).then(function (response) {
                 if (response.data)
                     $scope.msg = "Data Submitted Successfully!";
-                    this.isLoadingContent = true;
             }, 
             function (response) {
                 $scope.msg = "Service not Exists";
-                this.isLoadingContent = true;
+                this.isFailed = true;
             });
         }
     }

@@ -181,6 +181,15 @@ footer p{
     overflow: hidden;
 }
 /*Employee*/
+.savedEmInfo{
+    background: #f7f7f7;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+.savedEmInfo p{
+    display: inline-block;
+    width: 45%;
+}
 .k-gantt-toolbar .k-state-default, 
 .k-grid .k-grouping-header, 
 .k-grid-header, 

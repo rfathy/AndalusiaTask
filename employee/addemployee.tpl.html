@@ -1,9 +1,21 @@
 <div ng-controller="addCtrl">
+    <div ng-show='isFailed' class="alert alert-dismissible fade in" role="alert" ng-class="alertClass">
+        {{msg}}
+    </div>
+
+    <div ng-show="savedEm">
+        <h3>Added Employee Info</h3>
+        <div class="savedEmInfo">
+            <p><strong>Code: </strong>{{code}}</p>
+            <p><strong>Name: </strong>{{name}}</p>
+            <p><strong>Department: </strong>{{department}}</p>
+            <p><strong>Birthday: </strong>{{birthday}}</p>
+            <p><strong>Gender: </strong>{{gender}}</p>
+        </div>
+    </div>
+
     <h3>Add an Employee</h3>
 	<form kendo-validator="validator" ng-submit="validate($event)" novalidate class="k-form"> 
-        <div ng-show='isLoadingContent' class="alert alert-warning alert-dismissible fade in" role="alert">
-            {{msg}}
-        </div>
         <ul id="fieldlist">
             <li>
                 <label class="required">
@@ -45,12 +57,13 @@
                 </label>
             </li>
             <li>
-                <label>
+                <label class="required">
                 	<span>
                         Birthday
+                        <span class="k-required">*</span>
                     </span>
-                    <div class="demo-section k-content">
-                    <input name="birthday" ng-model="birthday" id="ddate" type="text" kendo-date-picker ng-attr-placeholder="{{dateOut | date:'MM/dd/yyyy'}}" style="width: 100%;">
+                    <div class="k-content">
+                        <input name="birthday" ng-model="birthday" id="ddate" type="text" kendo-date-picker ng-attr-placeholder="{{dateOut | date:'MM/dd/yyyy'}}" required validationMessage="Enter {0}">
                     </div>
                 </label>
             </li>
@@ -70,5 +83,4 @@
             <button type="submit" class="btn" ng-click="postdata(code, name, department, birthday, gender)">Add</button>
         </ul>
     </form>
-
 </div>
