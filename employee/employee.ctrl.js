@@ -120,7 +120,7 @@ app
 
             this.isFailed = true;
             //Call the services
-            $http.post('http://localhost/AndalusiaTask/data/data', JSON).then(function (response) {
+            $http.post('data/data.json', JSON).then(function (response) {
                 if (response.data)
                     $scope.msg = "Data Submitted Successfully!";
             }, 
