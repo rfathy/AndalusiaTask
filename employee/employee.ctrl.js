@@ -122,7 +122,7 @@ app
             }, 
             function (response) {
                 $scope.msg = "Service not Exists";
-            	$scope.alertClass = "alert-warning";
+            	$scope.alertClass = "alert-danger";
                 this.isFailed = true;
                 this.savedEm = false;
             });
