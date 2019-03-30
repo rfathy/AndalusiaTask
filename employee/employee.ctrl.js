@@ -55,7 +55,6 @@ app
     $scope.geValues = function(name, department){
         if(department == null){
             $scope.searchRes = []; //avoid dubplicate keys error
-            this.isRequired = true;
             this.hasResult = false;
         } 
         else{
@@ -65,7 +64,6 @@ app
                 }
             });
             this.hasResult = true;
-            this.isRequired = false;
         }
     } 
     $scope.resetValues = function (name, department){
