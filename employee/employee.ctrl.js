@@ -114,7 +114,7 @@ app
                     $scope.msg = "Data Submitted Successfully!";
             }, 
             function (response) {
-                $scope.msg = "Service not Exists";
+                $scope.msg = "Service does not exist";
             	$scope.alertClass = "alert-danger";
                 this.isFailed = true;
                 this.savedEm = false;
