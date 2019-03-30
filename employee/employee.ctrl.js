@@ -69,8 +69,8 @@ app
     $scope.resetValues = function (name, department){
         $scope.searchRes = []; //avoid dubplicate keys error
         //reset form
-        $scope.name = "";
-        $scope.department = "";
+        $scope.name = null;
+        $scope.department = null;
         this.hasResult = false;
     }
 })
