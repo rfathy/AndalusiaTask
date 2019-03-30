@@ -53,7 +53,7 @@ app
 
     $scope.searchRes = []; //array to hold returned results
     $scope.geValues = function(name, department){
-        if(department == null || department == ""){
+        if(department == null){
             $scope.searchRes = []; //avoid dubplicate keys error
             this.isRequired = true;
             this.hasResult = false;
