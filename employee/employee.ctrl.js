@@ -21,7 +21,7 @@ app
         dataSource: {
             type: "jsonp",
             transport: {
-                read: "data/data"
+                read: "data/data.json"
             }
         },
         columns: [
