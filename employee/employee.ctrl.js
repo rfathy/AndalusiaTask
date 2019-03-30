@@ -102,13 +102,6 @@ app
         }
         //if valid print success message
         else{
-            var data = {
-                code: code,
-                name: name,
-                department: department,
-                birthday: birthday,
-                gender: gender
-            };
 
             //print saved employee to screen
             this.savedEm = true;
