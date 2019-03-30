@@ -124,7 +124,7 @@ app
                 $scope.msg = "Service not Exists";
             	$scope.alertClass = "alert-warning";
                 this.isFailed = true;
-                this.savedEm = flase;
+                this.savedEm = false;
             });
         }
     }
