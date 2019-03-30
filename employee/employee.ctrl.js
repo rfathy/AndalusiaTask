@@ -4,7 +4,7 @@ app
 .factory('dataFactory', function($http) { //get data from json file 
     return {
         getEmpolyees: function() {
-            return $http.get('http://localhost/AndalusiaTask/data/data.json').then(function(result) {
+            return $http.get('data/data.json').then(function(result) {
                return result.data;
             });
         }
@@ -12,7 +12,7 @@ app
 })
 .factory('Result', ['$resource',
     function($resource){
-        return $resource('http://localhost/AndalusiaTask/data/data.json');
+        return $resource('data/data.json');
 }])
 .controller("gridCtrl", function($scope, $http) { 
     //inject employee data from json file and display in kendo grid 
